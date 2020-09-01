@@ -26,6 +26,14 @@ export function addFogOfWarListener() {
   });
 }
 
+export function clearFogPolygon () {
+  if (nextPolygon != null) {
+    nextPolygon.destroy();
+    currentPolygon = [];
+    layer.batchDraw();
+  }
+}
+
 //graphql
 export function syncronize(){
   let polygons = [];
